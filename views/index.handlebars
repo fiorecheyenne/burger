@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="jumbotron">
-        <h1 id="color-override">Burger Buffet</h1><img src="https://media.giphy.com/media/A2wMmQ8LKmF0c/giphy.gif"
+        <h1 id="color-override">BURGER BUFFET</h1><img src="https://media.giphy.com/media/A2wMmQ8LKmF0c/giphy.gif"
             height="200" align="right">
         <p id="color-override">Make great burgers, eat great burgers!</p>
         <br>
@@ -13,25 +13,30 @@
                     <label for="newburger" id="color-override">New Burger:</label>
                     <input type="text" id="newburger" name="burger">
 
-                    <button type="submit" class="btn btn-success" id="addburger"><span
+                    <button type="submit" class="btn btn-outline-dark" id="addburger"><span
                             class="fa fa-thumbs-up"></span></button>
                 </div>
             </form>
         </panel>
+
     </div>
 
     <div class="row">
 
         <div class="col-sm-6">
             <div class="panel panel-default">
+
                 <div class="panel-heading" id="lefthead"><strong>Try these burgers!</strong></div>
                 <div class="panel-body">
                     <ul>
                         {{#each burgers}}
                         {{#unless devoured}}
-                        <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                        <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+                        <span><strong> <img src="https://media.giphy.com/media/L07UPQa6n8d3PEvkCZ/giphy.gif"
+                                    height="50px" width="50px">{{this.id}} - {{this.burger_name}} </strong></span>
+                        <button type="button" class="eatburger btn btn-outline-dark" id="eatbutton"
+                            data-id="{{this.id}}" data-newDevoured="{{devour}}"><span
+                                class="fa fa-cutlery"></span></button>
+
                         <hr>
                         {{/unless}}
                         {{/each}}
@@ -42,6 +47,7 @@
 
 
 
+
         <div class="col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading" id="righthead"><strong>These Burgers have been eaten</strong></div>
@@ -49,9 +55,13 @@
                     <ul>
                         {{#each burgers}}
                         {{#if devoured}}
+                        <img src="https://media.giphy.com/media/3bzBarkXk4zwTwlQME/giphy.gif" height="50px"
+                            width="50px">
                         <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                        <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+                        <button type="button" class="btn btn-outline-danger trashburger" id="trashbutton"
+                            data-id="{{this.id}}" data-newDevoured="{{devour}}"><span
+                                class="fa fa-trash"></span></button>
+
                         <hr>
                         {{/if}}
                         {{/each}}
