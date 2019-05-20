@@ -1,60 +1,64 @@
 <div class="container">
+
     <div class="jumbotron">
-        <h1>Burger Buffet</h1><br>
-        <img src="https://media.giphy.com/media/xTiTntH1cWq5gyBceQ/giphy.gif" height="200px" width="200px"><br>
-        <h2>Burgers so good you might die</h2>
-        <br><br>
-        <h3>Add a new burger</h3><br>
-        <textarea class="form-control" id="newburger" rows="2"> </textarea>
-        <button type="submit" class="btn btn-outline-success btn-lg btn-block" id="addburger">submit your
-            burger!</button>
+        <h1 id="color-override">Burger Buffet</h1><img src="https://media.giphy.com/media/A2wMmQ8LKmF0c/giphy.gif"
+            height="200" align="right">
+        <p id="color-override">Make great burgers, eat great burgers!</p>
+        <br>
+        <h2 id="color-override">Create a Masterpiece</h2>
+
+        <panel>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="newburger" id="color-override">New Burger:</label>
+                    <input type="text" id="newburger" name="burger">
+
+                    <button type="submit" class="btn btn-success" id="addburger"><span
+                            class="fa fa-thumbs-up"></span></button>
+                </div>
+            </form>
+        </panel>
     </div>
+
     <div class="row">
-        <div class="col-md-6">
 
-
-            <div class="card">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Burgers!</h5>
-                    <p class="card-text">{{#each burgers}}
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="lefthead"><strong>Try these burgers!</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
                         {{#unless devoured}}
-                        {{burger_name}}
-                        <button class="eatburger btn btn-primary" id="eatbutton" data-id="{{this.id}}"
-                            data-newdevour="{{devour}}">
-                            Devour me
-                        </button>
+                        <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                        <button type="button" class="eatburger btn btn-warning" id="eatbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+                        <hr>
                         {{/unless}}
                         {{/each}}
-
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Burgers!</h5>
-                    <p class="card-text">
+
+
+
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="righthead"><strong>These Burgers have been eaten</strong></div>
+                <div class="panel-body">
+                    <ul>
                         {{#each burgers}}
                         {{#if devoured}}
-                        {{burger_name}}
-                        <button type="button" class="delete-burger btn btn-primary" id="deleteburger"
-                            data-id="{{this.id}}" data-newDevoured="{{devour}}"><i class="far fa-trash-alt"></i> Throw
-                            away</button>
+                        <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                        <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+                        <hr>
                         {{/if}}
                         {{/each}}
-
+                    </ul>
                 </div>
-                </p>
             </div>
-
         </div>
     </div>
 
-    <div class="mt-4">
-        <h4>{{burger_name}}</h4>
-
-        <!--Devour me button-->
-
-    </div>
+</div>

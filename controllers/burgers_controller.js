@@ -1,10 +1,10 @@
 const express = require("express");
 
-const router = express.Router();
+var burger = require("../models/burger.js");
+var router = express.Router();
 
-const burger = require("../models/burger.js");
 router.get("/", function(req, res) {
-  burger.all(function(data) {
+  burger.selectAll(function(data) {
     var hObj = {
       burgers: data
     };
@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-  burger.create(
+  burger.insertOne(
     ["burger_name", "devoured"],
     [req.body.burger_name, req.body.devoured],
     function(result) {
@@ -24,17 +24,17 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-  var condit = "id = " + req.params.id;
+  var condition = "id = " + req.params.id;
 
-  console.log("condit", condit);
+  console.log("condition", condition);
 
-  burger.update(
+  burger.updateOne(
     {
       devoured: req.body.devoured
     },
-    condit,
+    condition,
     function(result) {
-      if (result.changedRows == 0) {
+      if (result.changedRows === 0) {
         return res.status(404).end();
       } else {
         res.status(200).end();
@@ -44,10 +44,10 @@ router.put("/api/burgers/:id", function(req, res) {
 });
 
 router.delete("/api/burgers/:id", function(req, res) {
-  var condit = "id= " + req.params.id;
+  var condition = "id = " + req.params.id;
 
-  burger.delete(condit, function(result) {
-    if (result.affectedRows == 0) {
+  burger.deleteOne(condition, function(result) {
+    if (result.changedRows === 0) {
       return res.status(404).end();
     } else {
       res.status(200).end();
