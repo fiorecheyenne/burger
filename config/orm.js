@@ -24,14 +24,14 @@ function toSql(ob) {
 
 const orm = {
   all: function(table, cb) {
-    var queryString = "SELECT * FROM" + table + ";";
+    var queryString = "SELECT * FROM " + table + ";";
     connect.query(queryString, function(err, result) {
       if (err) throw err;
       cb(result);
     });
   },
   insert: function(table, col, val, cb) {
-    var queryString = "INSERT INTO" + table;
+    var queryString = "INSERT INTO " + table;
     queryString += "(";
     queryString += col.toString();
     queryString += ") ";
@@ -49,7 +49,7 @@ const orm = {
   },
   update: function(table, colVals, cond, cb) {
     var queryString = "UPDATE " + table;
-    queryString += "SET ";
+    queryString += " SET ";
     queryString += toSql(colVals);
     queryString += " WHERE ";
     queryString += cond;
