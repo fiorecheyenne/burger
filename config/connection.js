@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-var connect;
+var connection;
 // var connect = mysql.createConnection({
 //   host: "localhost",
 //   port: 8080,
@@ -19,9 +19,9 @@ var connect;
 // module.exports = connect;
 
 if (process.env.JAWSDB_URL) {
-  connect = mysql.createConnection(process.env.JAWSDB_URL);
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-  connect = mysql.createConnection({
+  connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "password",
@@ -29,12 +29,12 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
-connect.connect(function(err) {
+connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
   }
-  console.log("connected as id " + connect.threadId);
+  console.log("connected as id " + connection.threadId);
 });
 
-module.exports = connect;
+module.exports = connection;
