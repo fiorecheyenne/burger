@@ -1,13 +1,23 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create a burger, eat a burger!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fioriecheyenne/burger.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fioriecheyenne/burger/issues"
+  },
+  "homepage": "https://github.com/fioriecheyenne/burger#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.0",
