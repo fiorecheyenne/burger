@@ -3,9 +3,10 @@
 <h2>
 Create a burger, eat a burger!</h2>
 <br>
+Burger Buffet is an application that allows you to enter the burger that you wish to eat, devour the burger, and will show you all the eaten burgers in its own section. <br><br>
+
 <img src="public/assets/images/rec.gif" height="450px" width="850px">
 <br>
-Burger Buffet is an application that allows you to enter the burger that you wish to eat, devour the burger, and will show you all the eaten burgers in its own section. <br>
 
 <h3>Technologies used: </h3><br>
 - MySQL<br>
@@ -19,37 +20,37 @@ Burger Buffet is an application that allows you to enter the burger that you wis
 <br>
 <h3>Directory Structure</h3>
 
-├── config
-│   ├── connection.js
-│   └── orm.js
-│ 
-├── controllers
-│   └── burgers_controller.js
-│
-├── db
-│   ├── schema.sql
-│   └── seeds.sql
-│
-├── models
-│   └── burger.js
-│ 
-├── node_modules
-│ 
-├── package.json
-│
-├── public
-│   └── assets
-│      ├── css
-│      │   └──
-│      └── images
-│      | └──
-│   └── js  
-│ └──
-|
-├── server.js
-├── procfile.txt
-│
-└── views
-├── index.handlebars
-└── layouts
-└── main.handlebars
+├── config<br>
+│   ├── connection.js<br>
+│   └── orm.js<br>
+│ <br>
+├── controllers <br>
+│   └── burgers_controller.js<br>
+│<br>
+├── db<br>
+│   ├── schema.sql<br>
+│   └── seeds.sql<br>
+│<br>
+├── models<br>
+│   └── burger.js<br>
+│ <br>
+├── node_modules<br>
+│ <br>
+├── package.json<br>
+│<br>
+├── public<br>
+│   └── assets<br>
+│      ├── css<br>
+│      │   └──<br>
+│      └── images<br>
+│      | └──<br>
+│   └── js <br>
+│ └──<br>
+|<br>
+├── server.js<br>
+├── procfile.txt<br>
+│<br>
+└── views<br>
+├── index.handlebars<br>
+└── layouts<br>
+└── main.handlebars<br>
