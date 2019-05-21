@@ -1,8 +1,7 @@
 <div class="container">
 
     <div class="jumbotron">
-        <h1 id="color-override">BURGER BUFFET</h1><img src="https://media.giphy.com/media/A2wMmQ8LKmF0c/giphy.gif"
-            height="200" align="right">
+        <h1 id="color-override">BURGER BUFFET</h1><img src="/assets/images/heart.gif" height="200" align="right">
         <p id="color-override">Make great burgers, eat great burgers!</p>
         <br>
         <h2 id="color-override">Create a Masterpiece</h2>
@@ -31,8 +30,8 @@
                     <ul>
                         {{#each burgers}}
                         {{#unless devoured}}
-                        <span><strong> <img src="https://media.giphy.com/media/L07UPQa6n8d3PEvkCZ/giphy.gif"
-                                    height="50px" width="50px">{{this.id}} - {{this.burger_name}} </strong></span>
+                        <span><strong> <img src="/assets/images/brugerdude.gif" height="50px" width="50px">{{this.id}} -
+                                {{this.burger_name}} </strong></span>
                         <button type="button" class="eatburger btn btn-outline-dark" id="eatbutton"
                             data-id="{{this.id}}" data-newDevoured="{{devour}}"><span
                                 class="fa fa-cutlery"></span></button>
@@ -55,8 +54,7 @@
                     <ul>
                         {{#each burgers}}
                         {{#if devoured}}
-                        <img src="https://media.giphy.com/media/3bzBarkXk4zwTwlQME/giphy.gif" height="50px"
-                            width="50px">
+                        <img src="/assets/images/holdontobuns.gif" height="50px" width="50px">
                         <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
                         <button type="button" class="btn btn-outline-danger trashburger" id="trashbutton"
                             data-id="{{this.id}}" data-newDevoured="{{devour}}"><span
