@@ -2,7 +2,7 @@
 
 Create a burger, eat a burger!
 <br>
-<img src="/assets/images/rec.gif" height="300px" width="300px">
+<img src="/images/rec.gif" height="300px" width="300px">
 <br>
 Burger Buffet is an application that allows you to enter the burger that you wish to eat, devour the burger, and will show you all the eaten burgers in its own section. <br>
 
